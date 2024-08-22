@@ -1,3 +1,4 @@
+import { LoginButton } from "@/components/auth/login-button";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -7,12 +8,12 @@ export default function Home() {
         <h1 className="text-5xl font-semibold text-white drop-shadow-md">
           Auth
         </h1>
-        <p className="text-white text-lg">
-          Auth Simple
-        </p>
-        <Button variant={"secondary"} size={"lg"}>
-          Login
-        </Button>
+        <p className="text-white text-lg">Auth Simple</p>
+        <LoginButton>
+          <Button variant={"secondary"} size={"lg"}>
+            Login
+          </Button>
+        </LoginButton>
       </div>
     </main>
   );
