@@ -12,6 +12,18 @@ export const {
   signIn,
   signOut,
 } = NextAuth({
+  pages: {
+    signIn: "/auth/login",
+    error: "/auth/error",
+  },
+  events: {
+    async signIn({ user }) {
+      await db.user.update({
+        where: { id: user.id },
+        data: { emailVerified: new Date() },
+      });
+    },
+  },
   callbacks: {
     async session({ session, token }) {
       if (token.sub && session.user) {
@@ -21,7 +33,7 @@ export const {
       if (token.role && session.user) {
         session.user.role = token.role as UserRole;
       }
-      console.log(session);
+
       return session;
     },
     async jwt({ token }) {
