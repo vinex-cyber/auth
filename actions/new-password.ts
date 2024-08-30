@@ -1,3 +1,4 @@
+// /actions/new-password.ts
 "use server";
 
 import { getPasswordResetTokenByToken } from "@/data/password-reset-token";
