@@ -9,7 +9,7 @@ export default function Home() {
           Auth
         </h1>
         <p className="text-white text-lg">Auth Simple</p>
-        <LoginButton>
+        <LoginButton mode="modal" asChild>
           <Button variant={"secondary"} size={"lg"}>
             Login
           </Button>
